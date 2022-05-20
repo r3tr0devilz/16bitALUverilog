@@ -1,0 +1,1475 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                Version O-2018.06-SP4 for linux64 - Nov 27, 2018
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+set currentDesign alu
+alu
+set sourceFolder  {rtl}
+rtl
+#Need not touch from here
+set tmpStr ./saed32hvt_ff0p95v125c.db
+./saed32hvt_ff0p95v125c.db
+set target_library $tmpStr
+./saed32hvt_ff0p95v125c.db
+set link_library "* $target_library"
+* ./saed32hvt_ff0p95v125c.db
+analyze $sourceFolder -autoread -recursive -top $currentDesign
+== ANALYZE autoread for top design 'alu' ==
+
+Starting ANALYZE autoread mode...
+Information: Adding '/home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/rtl'.  (AUTOREAD-100)
+Warning: Adding missing directory to search_path - '/home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/rtl'. (AUTOREAD-105)
+Information: Adding '/home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/rtl/tb_alu.v'.  (AUTOREAD-100)
+Information: Adding '/home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/rtl/alumod.v'.  (AUTOREAD-100)
+Information: Scanning file { tb_alu.v }. (AUTOREAD-303)
+Information: Scanning file { alumod.v }. (AUTOREAD-303)
+Compiling source file /home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/rtl/alumod.v
+Warning:  /home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/rtl/alumod.v:240: The construct 'declaration initial assignment' is not supported in synthesis; it is ignored. (VER-708)
+Presto compilation completed successfully.
+Autoread command completed successfully.
+1
+elaborate     $currentDesign
+Loading db file '/home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/saed32hvt_ff0p95v125c.db'
+Loading db file '/usr/synopsys/syn/O-2018.06-SP4/libraries/syn/gtech.db'
+Loading db file '/usr/synopsys/syn/O-2018.06-SP4/libraries/syn/standard.sldb'
+  Loading link library 'saed32hvt_ff0p95v125c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 280 in file
+	'/home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/rtl/alumod.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           281            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine alu line 280 in file
+		'/home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/rtl/alumod.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|       ovf_reg       | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'alu'.
+Information: Building the design 'adder16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ripple_subtractor16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mul16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'division'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ripple_adder4'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ripple_subtractor4'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mul8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'adder24'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'full_adder'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mul4'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'adder8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'adder12'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'adder8c'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mul2'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'adder6'. (HDL-193)
+Presto compilation completed successfully.
+1
+current_design $currentDesign
+Current design is 'alu'.
+{alu}
+#setting clock
+#set clockPorts {clk}
+#create_clock -name myCLK $clockPorts -period 2.0 -waveform {0 1.0}
+#Common options
+set_max_area 0
+1
+set_host_options -max_cores 4
+1
+#uniquify
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.4 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 100 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'division'
+  Processing 'full_adder_0'
+  Processing 'ripple_adder4_0'
+  Processing 'adder8c_0'
+  Processing 'adder16_0'
+  Processing 'adder24_0'
+  Processing 'adder12_0'
+  Processing 'adder8_0'
+  Processing 'adder6_0'
+  Processing 'mul2_0'
+  Processing 'mul4_0'
+  Processing 'mul8_0'
+  Processing 'mul16'
+  Processing 'ripple_subtractor4_0'
+  Processing 'ripple_subtractor16'
+  Processing 'alu'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'division_DW01_sub_0'
+  Processing 'division_DW01_add_0'
+  Processing 'division_DW02_mult_0'
+  Processing 'division_DW01_sub_1'
+  Processing 'division_DW01_add_1'
+  Processing 'division_DW02_mult_1'
+  Processing 'division_DW01_sub_2'
+  Processing 'division_DW01_add_2'
+  Processing 'division_DW02_mult_2'
+  Processing 'division_DW01_sub_3'
+  Processing 'division_DW01_add_3'
+  Processing 'division_DW02_mult_3'
+  Processing 'division_DW01_sub_4'
+  Processing 'division_DW01_add_4'
+  Processing 'division_DW02_mult_4'
+  Processing 'division_DW01_sub_5'
+  Processing 'division_DW01_add_5'
+  Processing 'division_DW02_mult_5'
+  Processing 'division_DW01_sub_6'
+  Processing 'division_DW01_add_6'
+  Processing 'division_DW02_mult_6'
+  Processing 'division_DW01_sub_7'
+  Processing 'division_DW01_add_7'
+  Processing 'division_DW02_mult_7'
+  Processing 'division_DW01_sub_8'
+  Processing 'division_DW01_add_8'
+  Processing 'division_DW02_mult_8'
+  Processing 'division_DW01_sub_9'
+  Processing 'division_DW01_add_9'
+  Processing 'division_DW02_mult_9'
+  Processing 'division_DW01_sub_10'
+  Processing 'division_DW01_add_10'
+  Processing 'division_DW02_mult_10'
+  Processing 'division_DW01_sub_11'
+  Processing 'division_DW01_add_11'
+  Processing 'division_DW02_mult_11'
+  Processing 'division_DW01_sub_12'
+  Processing 'division_DW01_add_12'
+  Processing 'division_DW02_mult_12'
+  Processing 'division_DW01_sub_13'
+  Processing 'division_DW01_add_13'
+  Processing 'division_DW02_mult_13'
+  Processing 'division_DW01_sub_14'
+  Processing 'division_DW01_add_14'
+  Processing 'division_DW02_mult_14'
+  Processing 'division_DW01_sub_15'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Structuring 'mul2_63'
+  Mapping 'mul2_63'
+  Structuring 'mul2_62'
+  Mapping 'mul2_62'
+  Structuring 'mul2_61'
+  Mapping 'mul2_61'
+  Structuring 'mul2_60'
+  Mapping 'mul2_60'
+  Structuring 'mul2_59'
+  Mapping 'mul2_59'
+  Structuring 'mul2_58'
+  Mapping 'mul2_58'
+  Structuring 'mul2_57'
+  Mapping 'mul2_57'
+  Structuring 'mul2_56'
+  Mapping 'mul2_56'
+  Structuring 'mul2_55'
+  Mapping 'mul2_55'
+  Structuring 'mul2_54'
+  Mapping 'mul2_54'
+  Structuring 'mul2_53'
+  Mapping 'mul2_53'
+  Structuring 'mul2_52'
+  Mapping 'mul2_52'
+  Structuring 'mul2_51'
+  Mapping 'mul2_51'
+  Structuring 'mul2_50'
+  Mapping 'mul2_50'
+  Structuring 'mul2_49'
+  Mapping 'mul2_49'
+  Structuring 'mul2_48'
+  Mapping 'mul2_48'
+  Structuring 'mul2_47'
+  Mapping 'mul2_47'
+  Structuring 'mul2_46'
+  Mapping 'mul2_46'
+  Structuring 'mul2_45'
+  Mapping 'mul2_45'
+  Structuring 'mul2_44'
+  Mapping 'mul2_44'
+  Structuring 'mul2_43'
+  Mapping 'mul2_43'
+  Structuring 'mul2_42'
+  Mapping 'mul2_42'
+  Structuring 'mul2_41'
+  Mapping 'mul2_41'
+  Structuring 'mul2_40'
+  Mapping 'mul2_40'
+  Structuring 'mul2_39'
+  Mapping 'mul2_39'
+  Structuring 'mul2_38'
+  Mapping 'mul2_38'
+  Structuring 'mul2_37'
+  Mapping 'mul2_37'
+  Structuring 'mul2_36'
+  Mapping 'mul2_36'
+  Structuring 'mul2_35'
+  Mapping 'mul2_35'
+  Structuring 'mul2_34'
+  Mapping 'mul2_34'
+  Structuring 'mul2_33'
+  Mapping 'mul2_33'
+  Structuring 'mul2_32'
+  Mapping 'mul2_32'
+  Structuring 'mul2_31'
+  Mapping 'mul2_31'
+  Structuring 'mul2_30'
+  Mapping 'mul2_30'
+  Structuring 'mul2_29'
+  Mapping 'mul2_29'
+  Structuring 'mul2_28'
+  Mapping 'mul2_28'
+  Structuring 'mul2_27'
+  Mapping 'mul2_27'
+  Structuring 'mul2_26'
+  Mapping 'mul2_26'
+  Structuring 'mul2_25'
+  Mapping 'mul2_25'
+  Structuring 'mul2_24'
+  Mapping 'mul2_24'
+  Structuring 'mul2_23'
+  Mapping 'mul2_23'
+  Structuring 'mul2_22'
+  Mapping 'mul2_22'
+  Structuring 'mul2_21'
+  Mapping 'mul2_21'
+  Structuring 'mul2_20'
+  Mapping 'mul2_20'
+  Structuring 'mul2_19'
+  Mapping 'mul2_19'
+  Structuring 'mul2_18'
+  Mapping 'mul2_18'
+  Structuring 'mul2_17'
+  Mapping 'mul2_17'
+  Structuring 'mul2_16'
+  Mapping 'mul2_16'
+  Structuring 'mul2_15'
+  Mapping 'mul2_15'
+  Structuring 'mul2_14'
+  Mapping 'mul2_14'
+  Structuring 'mul2_13'
+  Mapping 'mul2_13'
+  Structuring 'mul2_12'
+  Mapping 'mul2_12'
+  Structuring 'mul2_11'
+  Mapping 'mul2_11'
+  Structuring 'mul2_10'
+  Mapping 'mul2_10'
+  Structuring 'mul2_9'
+  Mapping 'mul2_9'
+  Structuring 'mul2_8'
+  Mapping 'mul2_8'
+  Structuring 'mul2_7'
+  Mapping 'mul2_7'
+  Structuring 'mul2_6'
+  Mapping 'mul2_6'
+  Structuring 'mul2_5'
+  Mapping 'mul2_5'
+  Structuring 'mul2_4'
+  Mapping 'mul2_4'
+  Structuring 'mul2_3'
+  Mapping 'mul2_3'
+  Structuring 'mul2_2'
+  Mapping 'mul2_2'
+  Structuring 'mul2_1'
+  Mapping 'mul2_1'
+  Structuring 'full_adder_479'
+  Mapping 'full_adder_479'
+  Structuring 'full_adder_478'
+  Mapping 'full_adder_478'
+  Structuring 'full_adder_477'
+  Mapping 'full_adder_477'
+  Structuring 'full_adder_476'
+  Mapping 'full_adder_476'
+  Structuring 'full_adder_475'
+  Mapping 'full_adder_475'
+  Structuring 'full_adder_474'
+  Mapping 'full_adder_474'
+  Structuring 'full_adder_473'
+  Mapping 'full_adder_473'
+  Structuring 'full_adder_472'
+  Mapping 'full_adder_472'
+  Structuring 'full_adder_471'
+  Mapping 'full_adder_471'
+  Structuring 'full_adder_470'
+  Mapping 'full_adder_470'
+  Structuring 'full_adder_469'
+  Mapping 'full_adder_469'
+  Structuring 'full_adder_468'
+  Mapping 'full_adder_468'
+  Structuring 'full_adder_467'
+  Mapping 'full_adder_467'
+  Structuring 'full_adder_466'
+  Mapping 'full_adder_466'
+  Structuring 'full_adder_465'
+  Mapping 'full_adder_465'
+  Structuring 'full_adder_464'
+  Mapping 'full_adder_464'
+  Structuring 'full_adder_463'
+  Mapping 'full_adder_463'
+  Structuring 'full_adder_462'
+  Mapping 'full_adder_462'
+  Structuring 'full_adder_461'
+  Mapping 'full_adder_461'
+  Structuring 'full_adder_460'
+  Mapping 'full_adder_460'
+  Structuring 'full_adder_459'
+  Mapping 'full_adder_459'
+  Structuring 'full_adder_458'
+  Mapping 'full_adder_458'
+  Structuring 'full_adder_457'
+  Mapping 'full_adder_457'
+  Structuring 'full_adder_456'
+  Mapping 'full_adder_456'
+  Structuring 'full_adder_455'
+  Mapping 'full_adder_455'
+  Structuring 'full_adder_454'
+  Mapping 'full_adder_454'
+  Structuring 'full_adder_453'
+  Mapping 'full_adder_453'
+  Structuring 'full_adder_452'
+  Mapping 'full_adder_452'
+  Structuring 'full_adder_451'
+  Mapping 'full_adder_451'
+  Structuring 'full_adder_450'
+  Mapping 'full_adder_450'
+  Structuring 'full_adder_449'
+  Mapping 'full_adder_449'
+  Structuring 'full_adder_448'
+  Mapping 'full_adder_448'
+  Structuring 'full_adder_447'
+  Mapping 'full_adder_447'
+  Structuring 'full_adder_446'
+  Mapping 'full_adder_446'
+  Structuring 'full_adder_445'
+  Mapping 'full_adder_445'
+  Structuring 'full_adder_444'
+  Mapping 'full_adder_444'
+  Structuring 'full_adder_443'
+  Mapping 'full_adder_443'
+  Structuring 'full_adder_442'
+  Mapping 'full_adder_442'
+  Structuring 'full_adder_441'
+  Mapping 'full_adder_441'
+  Structuring 'full_adder_440'
+  Mapping 'full_adder_440'
+  Structuring 'full_adder_439'
+  Mapping 'full_adder_439'
+  Structuring 'full_adder_438'
+  Mapping 'full_adder_438'
+  Structuring 'full_adder_437'
+  Mapping 'full_adder_437'
+  Structuring 'full_adder_436'
+  Mapping 'full_adder_436'
+  Structuring 'full_adder_435'
+  Mapping 'full_adder_435'
+  Structuring 'full_adder_434'
+  Mapping 'full_adder_434'
+  Structuring 'full_adder_433'
+  Mapping 'full_adder_433'
+  Structuring 'full_adder_432'
+  Mapping 'full_adder_432'
+  Structuring 'full_adder_431'
+  Mapping 'full_adder_431'
+  Structuring 'full_adder_430'
+  Mapping 'full_adder_430'
+  Structuring 'full_adder_429'
+  Mapping 'full_adder_429'
+  Structuring 'full_adder_428'
+  Mapping 'full_adder_428'
+  Structuring 'full_adder_427'
+  Mapping 'full_adder_427'
+  Structuring 'full_adder_426'
+  Mapping 'full_adder_426'
+  Structuring 'full_adder_425'
+  Mapping 'full_adder_425'
+  Structuring 'full_adder_424'
+  Mapping 'full_adder_424'
+  Structuring 'full_adder_423'
+  Mapping 'full_adder_423'
+  Structuring 'full_adder_422'
+  Mapping 'full_adder_422'
+  Structuring 'full_adder_421'
+  Mapping 'full_adder_421'
+  Structuring 'full_adder_420'
+  Mapping 'full_adder_420'
+  Structuring 'full_adder_419'
+  Mapping 'full_adder_419'
+  Structuring 'full_adder_418'
+  Mapping 'full_adder_418'
+  Structuring 'full_adder_417'
+  Mapping 'full_adder_417'
+  Structuring 'full_adder_416'
+  Mapping 'full_adder_416'
+  Structuring 'full_adder_415'
+  Mapping 'full_adder_415'
+  Structuring 'full_adder_414'
+  Mapping 'full_adder_414'
+  Structuring 'full_adder_413'
+  Mapping 'full_adder_413'
+  Structuring 'full_adder_412'
+  Mapping 'full_adder_412'
+  Structuring 'full_adder_411'
+  Mapping 'full_adder_411'
+  Structuring 'full_adder_410'
+  Mapping 'full_adder_410'
+  Structuring 'full_adder_409'
+  Mapping 'full_adder_409'
+  Structuring 'full_adder_408'
+  Mapping 'full_adder_408'
+  Structuring 'full_adder_407'
+  Mapping 'full_adder_407'
+  Structuring 'full_adder_406'
+  Mapping 'full_adder_406'
+  Structuring 'full_adder_405'
+  Mapping 'full_adder_405'
+  Structuring 'full_adder_404'
+  Mapping 'full_adder_404'
+  Structuring 'full_adder_403'
+  Mapping 'full_adder_403'
+  Structuring 'full_adder_402'
+  Mapping 'full_adder_402'
+  Structuring 'full_adder_401'
+  Mapping 'full_adder_401'
+  Structuring 'full_adder_400'
+  Mapping 'full_adder_400'
+  Structuring 'full_adder_399'
+  Mapping 'full_adder_399'
+  Structuring 'full_adder_398'
+  Mapping 'full_adder_398'
+  Structuring 'full_adder_397'
+  Mapping 'full_adder_397'
+  Structuring 'full_adder_396'
+  Mapping 'full_adder_396'
+  Structuring 'full_adder_395'
+  Mapping 'full_adder_395'
+  Structuring 'full_adder_394'
+  Mapping 'full_adder_394'
+  Structuring 'full_adder_393'
+  Mapping 'full_adder_393'
+  Structuring 'full_adder_392'
+  Mapping 'full_adder_392'
+  Structuring 'full_adder_391'
+  Mapping 'full_adder_391'
+  Structuring 'full_adder_390'
+  Mapping 'full_adder_390'
+  Structuring 'full_adder_389'
+  Mapping 'full_adder_389'
+  Structuring 'full_adder_388'
+  Mapping 'full_adder_388'
+  Structuring 'full_adder_387'
+  Mapping 'full_adder_387'
+  Structuring 'full_adder_386'
+  Mapping 'full_adder_386'
+  Structuring 'full_adder_385'
+  Mapping 'full_adder_385'
+  Structuring 'full_adder_384'
+  Mapping 'full_adder_384'
+  Structuring 'full_adder_383'
+  Mapping 'full_adder_383'
+  Structuring 'full_adder_382'
+  Mapping 'full_adder_382'
+  Structuring 'full_adder_381'
+  Mapping 'full_adder_381'
+  Structuring 'full_adder_380'
+  Mapping 'full_adder_380'
+  Structuring 'full_adder_379'
+  Mapping 'full_adder_379'
+  Structuring 'full_adder_378'
+  Mapping 'full_adder_378'
+  Structuring 'full_adder_377'
+  Mapping 'full_adder_377'
+  Structuring 'full_adder_376'
+  Mapping 'full_adder_376'
+  Structuring 'full_adder_375'
+  Mapping 'full_adder_375'
+  Structuring 'full_adder_374'
+  Mapping 'full_adder_374'
+  Structuring 'full_adder_373'
+  Mapping 'full_adder_373'
+  Structuring 'full_adder_372'
+  Mapping 'full_adder_372'
+  Structuring 'full_adder_371'
+  Mapping 'full_adder_371'
+  Structuring 'full_adder_370'
+  Mapping 'full_adder_370'
+  Structuring 'full_adder_369'
+  Mapping 'full_adder_369'
+  Structuring 'full_adder_368'
+  Mapping 'full_adder_368'
+  Structuring 'full_adder_367'
+  Mapping 'full_adder_367'
+  Structuring 'full_adder_366'
+  Mapping 'full_adder_366'
+  Structuring 'full_adder_365'
+  Mapping 'full_adder_365'
+  Structuring 'full_adder_364'
+  Mapping 'full_adder_364'
+  Structuring 'full_adder_363'
+  Mapping 'full_adder_363'
+  Structuring 'full_adder_362'
+  Mapping 'full_adder_362'
+  Structuring 'full_adder_361'
+  Mapping 'full_adder_361'
+  Structuring 'full_adder_360'
+  Mapping 'full_adder_360'
+  Structuring 'full_adder_359'
+  Mapping 'full_adder_359'
+  Structuring 'full_adder_358'
+  Mapping 'full_adder_358'
+  Structuring 'full_adder_357'
+  Mapping 'full_adder_357'
+  Structuring 'full_adder_356'
+  Mapping 'full_adder_356'
+  Structuring 'full_adder_355'
+  Mapping 'full_adder_355'
+  Structuring 'full_adder_354'
+  Mapping 'full_adder_354'
+  Structuring 'full_adder_353'
+  Mapping 'full_adder_353'
+  Structuring 'full_adder_352'
+  Mapping 'full_adder_352'
+  Structuring 'full_adder_351'
+  Mapping 'full_adder_351'
+  Structuring 'full_adder_350'
+  Mapping 'full_adder_350'
+  Structuring 'full_adder_349'
+  Mapping 'full_adder_349'
+  Structuring 'full_adder_348'
+  Mapping 'full_adder_348'
+  Structuring 'full_adder_347'
+  Mapping 'full_adder_347'
+  Structuring 'full_adder_346'
+  Mapping 'full_adder_346'
+  Structuring 'full_adder_345'
+  Mapping 'full_adder_345'
+  Structuring 'full_adder_344'
+  Mapping 'full_adder_344'
+  Structuring 'full_adder_343'
+  Mapping 'full_adder_343'
+  Structuring 'full_adder_342'
+  Mapping 'full_adder_342'
+  Structuring 'full_adder_341'
+  Mapping 'full_adder_341'
+  Structuring 'full_adder_340'
+  Mapping 'full_adder_340'
+  Structuring 'full_adder_339'
+  Mapping 'full_adder_339'
+  Structuring 'full_adder_338'
+  Mapping 'full_adder_338'
+  Structuring 'full_adder_337'
+  Mapping 'full_adder_337'
+  Structuring 'full_adder_336'
+  Mapping 'full_adder_336'
+  Structuring 'full_adder_335'
+  Mapping 'full_adder_335'
+  Structuring 'full_adder_334'
+  Mapping 'full_adder_334'
+  Structuring 'full_adder_333'
+  Mapping 'full_adder_333'
+  Structuring 'full_adder_332'
+  Mapping 'full_adder_332'
+  Structuring 'full_adder_331'
+  Mapping 'full_adder_331'
+  Structuring 'full_adder_330'
+  Mapping 'full_adder_330'
+  Structuring 'full_adder_329'
+  Mapping 'full_adder_329'
+  Structuring 'full_adder_328'
+  Mapping 'full_adder_328'
+  Structuring 'full_adder_327'
+  Mapping 'full_adder_327'
+  Structuring 'full_adder_326'
+  Mapping 'full_adder_326'
+  Structuring 'full_adder_325'
+  Mapping 'full_adder_325'
+  Structuring 'full_adder_324'
+  Mapping 'full_adder_324'
+  Structuring 'full_adder_323'
+  Mapping 'full_adder_323'
+  Structuring 'full_adder_322'
+  Mapping 'full_adder_322'
+  Structuring 'full_adder_321'
+  Mapping 'full_adder_321'
+  Structuring 'full_adder_320'
+  Mapping 'full_adder_320'
+  Structuring 'full_adder_319'
+  Mapping 'full_adder_319'
+  Structuring 'full_adder_318'
+  Mapping 'full_adder_318'
+  Structuring 'full_adder_317'
+  Mapping 'full_adder_317'
+  Structuring 'full_adder_316'
+  Mapping 'full_adder_316'
+  Structuring 'full_adder_315'
+  Mapping 'full_adder_315'
+  Structuring 'full_adder_314'
+  Mapping 'full_adder_314'
+  Structuring 'full_adder_313'
+  Mapping 'full_adder_313'
+  Structuring 'full_adder_312'
+  Mapping 'full_adder_312'
+  Structuring 'full_adder_311'
+  Mapping 'full_adder_311'
+  Structuring 'full_adder_310'
+  Mapping 'full_adder_310'
+  Structuring 'full_adder_309'
+  Mapping 'full_adder_309'
+  Structuring 'full_adder_308'
+  Mapping 'full_adder_308'
+  Structuring 'full_adder_307'
+  Mapping 'full_adder_307'
+  Structuring 'full_adder_306'
+  Mapping 'full_adder_306'
+  Structuring 'full_adder_305'
+  Mapping 'full_adder_305'
+  Structuring 'full_adder_304'
+  Mapping 'full_adder_304'
+  Structuring 'full_adder_303'
+  Mapping 'full_adder_303'
+  Structuring 'full_adder_302'
+  Mapping 'full_adder_302'
+  Structuring 'full_adder_301'
+  Mapping 'full_adder_301'
+  Structuring 'full_adder_300'
+  Mapping 'full_adder_300'
+  Structuring 'full_adder_299'
+  Mapping 'full_adder_299'
+  Structuring 'full_adder_298'
+  Mapping 'full_adder_298'
+  Structuring 'full_adder_297'
+  Mapping 'full_adder_297'
+  Structuring 'full_adder_296'
+  Mapping 'full_adder_296'
+  Structuring 'full_adder_295'
+  Mapping 'full_adder_295'
+  Structuring 'full_adder_294'
+  Mapping 'full_adder_294'
+  Structuring 'full_adder_293'
+  Mapping 'full_adder_293'
+  Structuring 'full_adder_292'
+  Mapping 'full_adder_292'
+  Structuring 'full_adder_291'
+  Mapping 'full_adder_291'
+  Structuring 'full_adder_290'
+  Mapping 'full_adder_290'
+  Structuring 'full_adder_289'
+  Mapping 'full_adder_289'
+  Structuring 'full_adder_288'
+  Mapping 'full_adder_288'
+  Structuring 'full_adder_287'
+  Mapping 'full_adder_287'
+  Structuring 'full_adder_286'
+  Mapping 'full_adder_286'
+  Structuring 'full_adder_285'
+  Mapping 'full_adder_285'
+  Structuring 'full_adder_284'
+  Mapping 'full_adder_284'
+  Structuring 'full_adder_283'
+  Mapping 'full_adder_283'
+  Structuring 'full_adder_282'
+  Mapping 'full_adder_282'
+  Structuring 'full_adder_281'
+  Mapping 'full_adder_281'
+  Structuring 'full_adder_280'
+  Mapping 'full_adder_280'
+  Structuring 'full_adder_279'
+  Mapping 'full_adder_279'
+  Structuring 'full_adder_278'
+  Mapping 'full_adder_278'
+  Structuring 'full_adder_277'
+  Mapping 'full_adder_277'
+  Structuring 'full_adder_276'
+  Mapping 'full_adder_276'
+  Structuring 'full_adder_275'
+  Mapping 'full_adder_275'
+  Structuring 'full_adder_274'
+  Mapping 'full_adder_274'
+  Structuring 'full_adder_273'
+  Mapping 'full_adder_273'
+  Structuring 'full_adder_272'
+  Mapping 'full_adder_272'
+  Structuring 'full_adder_271'
+  Mapping 'full_adder_271'
+  Structuring 'full_adder_270'
+  Mapping 'full_adder_270'
+  Structuring 'full_adder_269'
+  Mapping 'full_adder_269'
+  Structuring 'full_adder_268'
+  Mapping 'full_adder_268'
+  Structuring 'full_adder_267'
+  Mapping 'full_adder_267'
+  Structuring 'full_adder_266'
+  Mapping 'full_adder_266'
+  Structuring 'full_adder_265'
+  Mapping 'full_adder_265'
+  Structuring 'full_adder_264'
+  Mapping 'full_adder_264'
+  Structuring 'full_adder_263'
+  Mapping 'full_adder_263'
+  Structuring 'full_adder_262'
+  Mapping 'full_adder_262'
+  Structuring 'full_adder_261'
+  Mapping 'full_adder_261'
+  Structuring 'full_adder_260'
+  Mapping 'full_adder_260'
+  Structuring 'full_adder_259'
+  Mapping 'full_adder_259'
+  Structuring 'full_adder_258'
+  Mapping 'full_adder_258'
+  Structuring 'full_adder_257'
+  Mapping 'full_adder_257'
+  Structuring 'full_adder_256'
+  Mapping 'full_adder_256'
+  Structuring 'full_adder_255'
+  Mapping 'full_adder_255'
+  Structuring 'full_adder_254'
+  Mapping 'full_adder_254'
+  Structuring 'full_adder_253'
+  Mapping 'full_adder_253'
+  Structuring 'full_adder_252'
+  Mapping 'full_adder_252'
+  Structuring 'full_adder_251'
+  Mapping 'full_adder_251'
+  Structuring 'full_adder_250'
+  Mapping 'full_adder_250'
+  Structuring 'full_adder_249'
+  Mapping 'full_adder_249'
+  Structuring 'full_adder_248'
+  Mapping 'full_adder_248'
+  Structuring 'full_adder_247'
+  Mapping 'full_adder_247'
+  Structuring 'full_adder_246'
+  Mapping 'full_adder_246'
+  Structuring 'full_adder_245'
+  Mapping 'full_adder_245'
+  Structuring 'full_adder_244'
+  Mapping 'full_adder_244'
+  Structuring 'full_adder_243'
+  Mapping 'full_adder_243'
+  Structuring 'full_adder_242'
+  Mapping 'full_adder_242'
+  Structuring 'full_adder_241'
+  Mapping 'full_adder_241'
+  Structuring 'full_adder_240'
+  Mapping 'full_adder_240'
+  Structuring 'full_adder_239'
+  Mapping 'full_adder_239'
+  Structuring 'full_adder_238'
+  Mapping 'full_adder_238'
+  Structuring 'full_adder_237'
+  Mapping 'full_adder_237'
+  Structuring 'full_adder_236'
+  Mapping 'full_adder_236'
+  Structuring 'full_adder_235'
+  Mapping 'full_adder_235'
+  Structuring 'full_adder_234'
+  Mapping 'full_adder_234'
+  Structuring 'full_adder_233'
+  Mapping 'full_adder_233'
+  Structuring 'full_adder_232'
+  Mapping 'full_adder_232'
+  Structuring 'full_adder_231'
+  Mapping 'full_adder_231'
+  Structuring 'full_adder_230'
+  Mapping 'full_adder_230'
+  Structuring 'full_adder_229'
+  Mapping 'full_adder_229'
+  Structuring 'full_adder_228'
+  Mapping 'full_adder_228'
+  Structuring 'full_adder_227'
+  Mapping 'full_adder_227'
+  Structuring 'full_adder_226'
+  Mapping 'full_adder_226'
+  Structuring 'full_adder_225'
+  Mapping 'full_adder_225'
+  Structuring 'full_adder_224'
+  Mapping 'full_adder_224'
+  Structuring 'full_adder_223'
+  Mapping 'full_adder_223'
+  Structuring 'full_adder_222'
+  Mapping 'full_adder_222'
+  Structuring 'full_adder_221'
+  Mapping 'full_adder_221'
+  Structuring 'full_adder_220'
+  Mapping 'full_adder_220'
+  Structuring 'full_adder_219'
+  Mapping 'full_adder_219'
+  Structuring 'full_adder_218'
+  Mapping 'full_adder_218'
+  Structuring 'full_adder_217'
+  Mapping 'full_adder_217'
+  Structuring 'full_adder_216'
+  Mapping 'full_adder_216'
+  Structuring 'full_adder_215'
+  Mapping 'full_adder_215'
+  Structuring 'full_adder_214'
+  Mapping 'full_adder_214'
+  Structuring 'full_adder_213'
+  Mapping 'full_adder_213'
+  Structuring 'full_adder_212'
+  Mapping 'full_adder_212'
+  Structuring 'full_adder_211'
+  Mapping 'full_adder_211'
+  Structuring 'full_adder_210'
+  Mapping 'full_adder_210'
+  Structuring 'full_adder_209'
+  Mapping 'full_adder_209'
+  Structuring 'full_adder_208'
+  Mapping 'full_adder_208'
+  Structuring 'full_adder_207'
+  Mapping 'full_adder_207'
+  Structuring 'full_adder_206'
+  Mapping 'full_adder_206'
+  Structuring 'full_adder_205'
+  Mapping 'full_adder_205'
+  Structuring 'full_adder_204'
+  Mapping 'full_adder_204'
+  Structuring 'full_adder_203'
+  Mapping 'full_adder_203'
+  Structuring 'full_adder_202'
+  Mapping 'full_adder_202'
+  Structuring 'full_adder_201'
+  Mapping 'full_adder_201'
+  Structuring 'full_adder_200'
+  Mapping 'full_adder_200'
+  Structuring 'full_adder_199'
+  Mapping 'full_adder_199'
+  Structuring 'full_adder_198'
+  Mapping 'full_adder_198'
+  Structuring 'full_adder_197'
+  Mapping 'full_adder_197'
+  Structuring 'full_adder_196'
+  Mapping 'full_adder_196'
+  Structuring 'full_adder_195'
+  Mapping 'full_adder_195'
+  Structuring 'full_adder_194'
+  Mapping 'full_adder_194'
+  Structuring 'full_adder_193'
+  Mapping 'full_adder_193'
+  Structuring 'full_adder_192'
+  Mapping 'full_adder_192'
+  Structuring 'full_adder_191'
+  Mapping 'full_adder_191'
+  Structuring 'full_adder_190'
+  Mapping 'full_adder_190'
+  Structuring 'full_adder_189'
+  Mapping 'full_adder_189'
+  Structuring 'full_adder_188'
+  Mapping 'full_adder_188'
+  Structuring 'full_adder_187'
+  Mapping 'full_adder_187'
+  Structuring 'full_adder_186'
+  Mapping 'full_adder_186'
+  Structuring 'full_adder_185'
+  Mapping 'full_adder_185'
+  Structuring 'full_adder_184'
+  Mapping 'full_adder_184'
+  Structuring 'full_adder_183'
+  Mapping 'full_adder_183'
+  Structuring 'full_adder_182'
+  Mapping 'full_adder_182'
+  Structuring 'full_adder_181'
+  Mapping 'full_adder_181'
+  Structuring 'full_adder_180'
+  Mapping 'full_adder_180'
+  Structuring 'full_adder_179'
+  Mapping 'full_adder_179'
+  Structuring 'full_adder_178'
+  Mapping 'full_adder_178'
+  Structuring 'full_adder_177'
+  Mapping 'full_adder_177'
+  Structuring 'full_adder_176'
+  Mapping 'full_adder_176'
+  Structuring 'full_adder_175'
+  Mapping 'full_adder_175'
+  Structuring 'full_adder_174'
+  Mapping 'full_adder_174'
+  Structuring 'full_adder_173'
+  Mapping 'full_adder_173'
+  Structuring 'full_adder_172'
+  Mapping 'full_adder_172'
+  Structuring 'full_adder_171'
+  Mapping 'full_adder_171'
+  Structuring 'full_adder_170'
+  Mapping 'full_adder_170'
+  Structuring 'full_adder_169'
+  Mapping 'full_adder_169'
+  Structuring 'full_adder_168'
+  Mapping 'full_adder_168'
+  Structuring 'full_adder_167'
+  Mapping 'full_adder_167'
+  Structuring 'full_adder_166'
+  Mapping 'full_adder_166'
+  Structuring 'full_adder_165'
+  Mapping 'full_adder_165'
+  Structuring 'full_adder_164'
+  Mapping 'full_adder_164'
+  Structuring 'full_adder_163'
+  Mapping 'full_adder_163'
+  Structuring 'full_adder_162'
+  Mapping 'full_adder_162'
+  Structuring 'full_adder_161'
+  Mapping 'full_adder_161'
+  Structuring 'full_adder_160'
+  Mapping 'full_adder_160'
+  Structuring 'full_adder_159'
+  Mapping 'full_adder_159'
+  Structuring 'full_adder_158'
+  Mapping 'full_adder_158'
+  Structuring 'full_adder_157'
+  Mapping 'full_adder_157'
+  Structuring 'full_adder_156'
+  Mapping 'full_adder_156'
+  Structuring 'full_adder_155'
+  Mapping 'full_adder_155'
+  Structuring 'full_adder_154'
+  Mapping 'full_adder_154'
+  Structuring 'full_adder_153'
+  Mapping 'full_adder_153'
+  Structuring 'full_adder_152'
+  Mapping 'full_adder_152'
+  Structuring 'full_adder_151'
+  Mapping 'full_adder_151'
+  Structuring 'full_adder_150'
+  Mapping 'full_adder_150'
+  Structuring 'full_adder_149'
+  Mapping 'full_adder_149'
+  Structuring 'full_adder_148'
+  Mapping 'full_adder_148'
+  Structuring 'full_adder_147'
+  Mapping 'full_adder_147'
+  Structuring 'full_adder_146'
+  Mapping 'full_adder_146'
+  Structuring 'full_adder_145'
+  Mapping 'full_adder_145'
+  Structuring 'full_adder_144'
+  Mapping 'full_adder_144'
+  Structuring 'full_adder_143'
+  Mapping 'full_adder_143'
+  Structuring 'full_adder_142'
+  Mapping 'full_adder_142'
+  Structuring 'full_adder_141'
+  Mapping 'full_adder_141'
+  Structuring 'full_adder_140'
+  Mapping 'full_adder_140'
+  Structuring 'full_adder_139'
+  Mapping 'full_adder_139'
+  Structuring 'full_adder_138'
+  Mapping 'full_adder_138'
+  Structuring 'full_adder_137'
+  Mapping 'full_adder_137'
+  Structuring 'full_adder_136'
+  Mapping 'full_adder_136'
+  Structuring 'full_adder_135'
+  Mapping 'full_adder_135'
+  Structuring 'full_adder_134'
+  Mapping 'full_adder_134'
+  Structuring 'full_adder_133'
+  Mapping 'full_adder_133'
+  Structuring 'full_adder_132'
+  Mapping 'full_adder_132'
+  Structuring 'full_adder_131'
+  Mapping 'full_adder_131'
+  Structuring 'full_adder_130'
+  Mapping 'full_adder_130'
+  Structuring 'full_adder_129'
+  Mapping 'full_adder_129'
+  Structuring 'full_adder_128'
+  Mapping 'full_adder_128'
+  Structuring 'full_adder_127'
+  Mapping 'full_adder_127'
+  Structuring 'full_adder_126'
+  Mapping 'full_adder_126'
+  Structuring 'full_adder_125'
+  Mapping 'full_adder_125'
+  Structuring 'full_adder_124'
+  Mapping 'full_adder_124'
+  Structuring 'full_adder_123'
+  Mapping 'full_adder_123'
+  Structuring 'full_adder_122'
+  Mapping 'full_adder_122'
+  Structuring 'full_adder_121'
+  Mapping 'full_adder_121'
+  Structuring 'full_adder_120'
+  Mapping 'full_adder_120'
+  Structuring 'full_adder_119'
+  Mapping 'full_adder_119'
+  Structuring 'full_adder_118'
+  Mapping 'full_adder_118'
+  Structuring 'full_adder_117'
+  Mapping 'full_adder_117'
+  Structuring 'full_adder_116'
+  Mapping 'full_adder_116'
+  Structuring 'full_adder_115'
+  Mapping 'full_adder_115'
+  Structuring 'full_adder_114'
+  Mapping 'full_adder_114'
+  Structuring 'full_adder_113'
+  Mapping 'full_adder_113'
+  Structuring 'full_adder_112'
+  Mapping 'full_adder_112'
+  Structuring 'full_adder_111'
+  Mapping 'full_adder_111'
+  Structuring 'full_adder_110'
+  Mapping 'full_adder_110'
+  Structuring 'full_adder_109'
+  Mapping 'full_adder_109'
+  Structuring 'full_adder_108'
+  Mapping 'full_adder_108'
+  Structuring 'full_adder_107'
+  Mapping 'full_adder_107'
+  Structuring 'full_adder_106'
+  Mapping 'full_adder_106'
+  Structuring 'full_adder_105'
+  Mapping 'full_adder_105'
+  Structuring 'full_adder_104'
+  Mapping 'full_adder_104'
+  Structuring 'full_adder_103'
+  Mapping 'full_adder_103'
+  Structuring 'full_adder_102'
+  Mapping 'full_adder_102'
+  Structuring 'full_adder_101'
+  Mapping 'full_adder_101'
+  Structuring 'full_adder_100'
+  Mapping 'full_adder_100'
+  Structuring 'full_adder_99'
+  Mapping 'full_adder_99'
+  Structuring 'full_adder_98'
+  Mapping 'full_adder_98'
+  Structuring 'full_adder_97'
+  Mapping 'full_adder_97'
+  Structuring 'full_adder_96'
+  Mapping 'full_adder_96'
+  Structuring 'full_adder_95'
+  Mapping 'full_adder_95'
+  Structuring 'full_adder_94'
+  Mapping 'full_adder_94'
+  Structuring 'full_adder_93'
+  Mapping 'full_adder_93'
+  Structuring 'full_adder_92'
+  Mapping 'full_adder_92'
+  Structuring 'full_adder_91'
+  Mapping 'full_adder_91'
+  Structuring 'full_adder_90'
+  Mapping 'full_adder_90'
+  Structuring 'full_adder_89'
+  Mapping 'full_adder_89'
+  Structuring 'full_adder_88'
+  Mapping 'full_adder_88'
+  Structuring 'full_adder_87'
+  Mapping 'full_adder_87'
+  Structuring 'full_adder_86'
+  Mapping 'full_adder_86'
+  Structuring 'full_adder_85'
+  Mapping 'full_adder_85'
+  Structuring 'full_adder_84'
+  Mapping 'full_adder_84'
+  Structuring 'full_adder_83'
+  Mapping 'full_adder_83'
+  Structuring 'full_adder_82'
+  Mapping 'full_adder_82'
+  Structuring 'full_adder_81'
+  Mapping 'full_adder_81'
+  Structuring 'full_adder_80'
+  Mapping 'full_adder_80'
+  Structuring 'full_adder_79'
+  Mapping 'full_adder_79'
+  Structuring 'full_adder_78'
+  Mapping 'full_adder_78'
+  Structuring 'full_adder_77'
+  Mapping 'full_adder_77'
+  Structuring 'full_adder_76'
+  Mapping 'full_adder_76'
+  Structuring 'full_adder_75'
+  Mapping 'full_adder_75'
+  Structuring 'full_adder_74'
+  Mapping 'full_adder_74'
+  Structuring 'full_adder_73'
+  Mapping 'full_adder_73'
+  Structuring 'full_adder_72'
+  Mapping 'full_adder_72'
+  Structuring 'full_adder_71'
+  Mapping 'full_adder_71'
+  Structuring 'full_adder_70'
+  Mapping 'full_adder_70'
+  Structuring 'full_adder_69'
+  Mapping 'full_adder_69'
+  Structuring 'full_adder_68'
+  Mapping 'full_adder_68'
+  Structuring 'full_adder_67'
+  Mapping 'full_adder_67'
+  Structuring 'full_adder_66'
+  Mapping 'full_adder_66'
+  Structuring 'full_adder_65'
+  Mapping 'full_adder_65'
+  Structuring 'full_adder_64'
+  Mapping 'full_adder_64'
+  Structuring 'full_adder_63'
+  Mapping 'full_adder_63'
+  Structuring 'full_adder_62'
+  Mapping 'full_adder_62'
+  Structuring 'full_adder_61'
+  Mapping 'full_adder_61'
+  Structuring 'full_adder_60'
+  Mapping 'full_adder_60'
+  Structuring 'full_adder_59'
+  Mapping 'full_adder_59'
+  Structuring 'full_adder_58'
+  Mapping 'full_adder_58'
+  Structuring 'full_adder_57'
+  Mapping 'full_adder_57'
+  Structuring 'full_adder_56'
+  Mapping 'full_adder_56'
+  Structuring 'full_adder_55'
+  Mapping 'full_adder_55'
+  Structuring 'full_adder_54'
+  Mapping 'full_adder_54'
+  Structuring 'full_adder_53'
+  Mapping 'full_adder_53'
+  Structuring 'full_adder_52'
+  Mapping 'full_adder_52'
+  Structuring 'full_adder_51'
+  Mapping 'full_adder_51'
+  Structuring 'full_adder_50'
+  Mapping 'full_adder_50'
+  Structuring 'full_adder_49'
+  Mapping 'full_adder_49'
+  Structuring 'full_adder_48'
+  Mapping 'full_adder_48'
+  Structuring 'full_adder_47'
+  Mapping 'full_adder_47'
+  Structuring 'full_adder_46'
+  Mapping 'full_adder_46'
+  Structuring 'full_adder_45'
+  Mapping 'full_adder_45'
+  Structuring 'full_adder_44'
+  Mapping 'full_adder_44'
+  Structuring 'full_adder_43'
+  Mapping 'full_adder_43'
+  Structuring 'full_adder_42'
+  Mapping 'full_adder_42'
+  Structuring 'full_adder_41'
+  Mapping 'full_adder_41'
+  Structuring 'full_adder_40'
+  Mapping 'full_adder_40'
+  Structuring 'full_adder_39'
+  Mapping 'full_adder_39'
+  Structuring 'full_adder_38'
+  Mapping 'full_adder_38'
+  Structuring 'full_adder_37'
+  Mapping 'full_adder_37'
+  Structuring 'full_adder_36'
+  Mapping 'full_adder_36'
+  Structuring 'full_adder_35'
+  Mapping 'full_adder_35'
+  Structuring 'full_adder_34'
+  Mapping 'full_adder_34'
+  Structuring 'full_adder_33'
+  Mapping 'full_adder_33'
+  Structuring 'full_adder_32'
+  Mapping 'full_adder_32'
+  Structuring 'full_adder_31'
+  Mapping 'full_adder_31'
+  Structuring 'full_adder_30'
+  Mapping 'full_adder_30'
+  Structuring 'full_adder_29'
+  Mapping 'full_adder_29'
+  Structuring 'full_adder_28'
+  Mapping 'full_adder_28'
+  Structuring 'full_adder_27'
+  Mapping 'full_adder_27'
+  Structuring 'full_adder_26'
+  Mapping 'full_adder_26'
+  Structuring 'full_adder_25'
+  Mapping 'full_adder_25'
+  Structuring 'full_adder_24'
+  Mapping 'full_adder_24'
+  Structuring 'full_adder_23'
+  Mapping 'full_adder_23'
+  Structuring 'full_adder_22'
+  Mapping 'full_adder_22'
+  Structuring 'full_adder_21'
+  Mapping 'full_adder_21'
+  Structuring 'full_adder_20'
+  Mapping 'full_adder_20'
+  Structuring 'full_adder_19'
+  Mapping 'full_adder_19'
+  Structuring 'full_adder_18'
+  Mapping 'full_adder_18'
+  Structuring 'full_adder_17'
+  Mapping 'full_adder_17'
+  Structuring 'full_adder_16'
+  Mapping 'full_adder_16'
+  Structuring 'full_adder_15'
+  Mapping 'full_adder_15'
+  Structuring 'full_adder_14'
+  Mapping 'full_adder_14'
+  Structuring 'full_adder_13'
+  Mapping 'full_adder_13'
+  Structuring 'full_adder_12'
+  Mapping 'full_adder_12'
+  Structuring 'full_adder_11'
+  Mapping 'full_adder_11'
+  Structuring 'full_adder_10'
+  Mapping 'full_adder_10'
+  Structuring 'full_adder_9'
+  Mapping 'full_adder_9'
+  Structuring 'full_adder_8'
+  Mapping 'full_adder_8'
+  Structuring 'full_adder_7'
+  Mapping 'full_adder_7'
+  Structuring 'full_adder_6'
+  Mapping 'full_adder_6'
+  Structuring 'full_adder_5'
+  Mapping 'full_adder_5'
+  Structuring 'full_adder_4'
+  Mapping 'full_adder_4'
+  Structuring 'full_adder_3'
+  Mapping 'full_adder_3'
+  Structuring 'full_adder_2'
+  Mapping 'full_adder_2'
+  Structuring 'full_adder_1'
+  Mapping 'full_adder_1'
+  Structuring 'ripple_subtractor4_3'
+  Mapping 'ripple_subtractor4_3'
+  Structuring 'ripple_subtractor4_2'
+  Mapping 'ripple_subtractor4_2'
+  Structuring 'ripple_subtractor4_1'
+  Mapping 'ripple_subtractor4_1'
+  Structuring 'mul2_0'
+  Mapping 'mul2_0'
+  Structuring 'full_adder_0'
+  Mapping 'full_adder_0'
+  Structuring 'ripple_subtractor4_0'
+  Mapping 'ripple_subtractor4_0'
+  Structuring 'division'
+  Mapping 'division'
+  Structuring 'mul16'
+  Mapping 'mul16'
+  Structuring 'ripple_subtractor16'
+  Mapping 'ripple_subtractor16'
+  Structuring 'alu'
+  Mapping 'alu'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05    9782.8      0.00       0.0       2.4                          
+    0:00:05    9782.8      0.00       0.0       2.4                          
+    0:00:05    9782.8      0.00       0.0       2.4                          
+    0:00:05    9782.8      0.00       0.0       2.4                          
+    0:00:05    9782.8      0.00       0.0       2.4                          
+    0:00:05    9707.3      0.00       0.0       2.4                          
+    0:00:05    9707.3      0.00       0.0       2.4                          
+    0:00:05    9707.3      0.00       0.0       2.4                          
+    0:00:05    9707.3      0.00       0.0       2.4                          
+    0:00:05    9707.3      0.00       0.0       2.4                          
+    0:00:05    9710.1      0.00       0.0       1.3                          
+    0:00:05    9712.9      0.00       0.0       0.6                          
+    0:00:05    9716.4      0.00       0.0       0.2                          
+    0:00:05    9716.7      0.00       0.0       0.0                          
+    0:00:05    9716.7      0.00       0.0       0.0                          
+    0:00:05    9716.7      0.00       0.0       0.0                          
+    0:00:05    9716.7      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05    9716.7      0.00       0.0       0.0                          
+    0:00:05    9716.7      0.00       0.0       0.0                          
+    0:00:05    9716.7      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05    9716.7      0.00       0.0       0.0                          
+    0:00:05    9716.7      0.00       0.0       0.0                          
+    0:00:05    9698.9      0.00       0.0       0.0                          
+    0:00:05    9698.9      0.00       0.0       0.0                          
+    0:00:05    9698.9      0.00       0.0       0.0                          
+    0:00:05    9698.9      0.00       0.0       0.0                          
+    0:00:05    9698.9      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+    0:00:05    9697.6      0.00       0.0       0.0                          
+Loading db file '/home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/saed32hvt_ff0p95v125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+write -f verilog $currentDesign -hierarchy -output $currentDesign.syn.v
+Writing verilog file '/home/KNUEEhdd1/comp311/comp3/Desktop/7971/proj1/dc/alu.syn.v'.
+Warning: Verilog writer has added 15 nets to module division using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+write_sdc $currentDesign.sdc
+1
+report_qor
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : qor
+Design : alu
+Version: O-2018.06-SP4
+Date   : Wed May 11 14:11:57 2022
+****************************************
+
+
+  Timing Path Group (none)
+  -----------------------------------
+  Levels of Logic:             285.00
+  Critical Path Length:        427.23
+  Critical Path Slack:         uninit
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:        721
+  Hierarchical Port Count:       7264
+  Leaf Cell Count:               2989
+  Buf/Inv Cell Count:             340
+  Buf Cell Count:                   0
+  Inv Cell Count:                 340
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      2988
+  Sequential Cell Count:            1
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:     9692.543759
+  Noncombinational Area:     5.082880
+  Buf/Inv Area:            432.807234
+  Total Buffer Area:             0.00
+  Total Inverter Area:         432.81
+  Macro/Black Box Area:      0.000000
+  Net Area:               2030.154971
+  -----------------------------------
+  Cell Area:              9697.626639
+  Design Area:           11727.781611
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          3513
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: knuee-srv1
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    1.75
+  Logic Optimization:                  4.11
+  Mapping Optimization:                1.26
+  -----------------------------------------
+  Overall Compile Time:                9.13
+  Overall Compile Wall Clock Time:     6.66
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
+exit
+
+Thank you...
